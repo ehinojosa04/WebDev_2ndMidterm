@@ -1,0 +1,14 @@
+:root {
+    --main: #0A369D;
+    --secondary: #4472CA;
+    --details: #5E7CE2;
+    --details-light: #92B4F4;
+    --bg: #000;
+}
+body{
+    font-family: 'Urbanist', sans-serif;
+    background-color: var(--bg);
+}
+nav.st {
+    padding: 10px 10px 10px 20px;
+}
