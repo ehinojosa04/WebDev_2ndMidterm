@@ -1,15 +1,18 @@
 :root {
-    --main: #0A369D;
-    --secondary: #4472CA;
-    --details: #5E7CE2;
-    --details-light: #92B4F4;
-    --bg: #000;
+    --main: #011627;
+    --secondary: #2ec4b6;
+    --details: #e71d36;
+    --details-light: #FF9F1C;
+    --bg: #fdfffc;
 }
 body{
     font-family: 'Urbanist', sans-serif;
 }
 nav.st {
     padding: 10px 10px 10px 20px;
+}
+nav{
+    background-color: var(--secondary);
 }
 
 div.container_principal{
