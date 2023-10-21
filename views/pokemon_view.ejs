@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row align-items-md-stretch p-4">
       <div class="col-md-6">
-        <div class="my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="fc" class="my-3 p-3 bg-body-tertiary border rounded-3">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
           <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
           <h5>
