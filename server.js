@@ -10,7 +10,7 @@ app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
 app.get('/home', (req,res)=>{
-    res.render('home')
+    res.render('home', { title: "Home"})
 })
 
 app.get('/pokemon_view/:id', async (req, res) => {
