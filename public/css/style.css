@@ -13,6 +13,7 @@ nav.st {
 }
 nav{
     background-color: var(--secondary);
+    position: sticky;
 }
 
 div.container_principal{
@@ -30,12 +31,14 @@ body{
     background-color: var(--bg);
 }
 .searchbar{
+    display: flex;
     margin-bottom: auto;
     margin-top: auto;
     height: 60px;
     background-color: #353b48;
     border-radius: 30px;
     padding: 10px;
+    align-items: center;
     }
 
 .search_input{
