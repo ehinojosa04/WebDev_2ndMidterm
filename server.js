@@ -9,18 +9,17 @@ app.use(express.static("public"));
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
-
-app.get('/Home', (req,res) => {
-    res.render('home')
-})
-
 app.get('/pokemon_view/:id', async (req, res) => {
     const id = req.params.id;
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    let data;
-    const response = await fetch(url);
-    data = await response.json();
-    res.render('pokemon_view', { pokemon: data });
+    const url1 = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const url2 = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
+    let data1;
+    const response1 = await fetch(url1);
+    data1 = await response1.json();
+    let data2;
+    const response2 = await fetch(url2);
+    data2 = await response2.json();
+    res.render('pokemon_view', { pokemon: data1 , species: data2});
 });
 
 

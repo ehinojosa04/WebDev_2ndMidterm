@@ -5,8 +5,9 @@
 <div class="container-fluid">
   <div class="row align-items-md-stretch p-4">
       <div class="col-md-6">
-        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-          <h2><%= pokemon.name %></h2>
+        <div class=" p-5 bg-body-tertiary border rounded-3">
+          <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
+          <h3> <%= species.flavor_text_entries[0].flavor_text %> </h3>
           <p>
             <% pokemon.types.forEach(function(pk) { %>
                 <span class="badge text-bg-danger"><%= pk.type.name %></span>
