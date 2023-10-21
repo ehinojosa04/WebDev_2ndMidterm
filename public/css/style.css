@@ -7,8 +7,18 @@
 }
 body{
     font-family: 'Urbanist', sans-serif;
-    background-color: var(--bg);
 }
 nav.st {
     padding: 10px 10px 10px 20px;
+}
+
+div.container_principal{
+    background-color: #FDFFFC;
+    color: #011627;
+}
+
+
+img.pokeImg{
+    aspect-ratio: 1/1;
+    height: 100%;
 }

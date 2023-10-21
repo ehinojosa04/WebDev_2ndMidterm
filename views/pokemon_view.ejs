@@ -1,4 +1,18 @@
-<%- include("partials/header") -%>
+<%- include("partials/header", {title: pokemon.name}) -%>
 <%- include("partials/navbar") -%>
-<h1><%=pokemon.name%></h1>
+<!-- <h1 class="container-fluid text-center p-4"><%=pokemon.name%></h1>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.id %>.png" alt=""> -->
+
+<div class="row align-items-md-stretch p-4">
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+        <h2><%= pokemon.name %></h2>
+        <p><%= pokemon %></p>
+        <button class="btn btn-outline-secondary" type="button">Example button</button>
+      </div>
+    </div>
+    <div class="col-md-6 text-center">
+     <img class="pokeImg" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.id %>.png" alt="">
+    </div>
+  </div>
 <%- include("partials/footer") -%>
