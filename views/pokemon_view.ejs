@@ -7,15 +7,15 @@
       <div class="col-md-6">
         <div class=" p-5 bg-body-tertiary border rounded-3">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
-          <h3> <%= species.flavor_text_entries[0].flavor_text %> </h3>
-          <p>
+          <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
+          <h5>
             <% pokemon.types.forEach(function(pk) { %>
                 <span class="badge text-bg-danger"><%= pk.type.name %></span>
             <% }); %> 
-          </p>
+          </h5>
         </div>
       </div>
-      <div class="col-md-6 text-center">
+      <div class=" h-100 col-md-6 text-center">
        <img class="pokeImg" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="">
       </div>
     </div>
