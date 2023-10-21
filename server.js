@@ -9,6 +9,10 @@ app.use(express.static("public"));
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
+app.get('/home', (req,res)=>{
+    res.render('home', { title: "Home"})
+})
+
 app.get('/pokemon_view/:id', async (req, res) => {
     const id = req.params.id;
     const url1 = `https://pokeapi.co/api/v2/pokemon/${id}`;
