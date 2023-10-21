@@ -2,20 +2,21 @@
 <%- include("partials/navbar") -%>
 <!-- <h1 class="container-fluid text-center p-4"><%=pokemon.name%></h1>
 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.id %>.png" alt=""> -->
-
-<div class="row align-items-md-stretch p-4">
-    <div class="col-md-6">
-      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-        <h2><%= pokemon.name %></h2>
-        <p>
-          <% pokemon.types.forEach(function(pk) { %>
-              <span class="badge text-bg-danger"><%= pk.type.name %></span>
-          <% }); %> 
-        </p>
+<div class="container-fluid">
+  <div class="row align-items-md-stretch p-4">
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+          <h2><%= pokemon.name %></h2>
+          <p>
+            <% pokemon.types.forEach(function(pk) { %>
+                <span class="badge text-bg-danger"><%= pk.type.name %></span>
+            <% }); %> 
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 text-center">
+       <img class="pokeImg" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="">
       </div>
     </div>
-    <div class="col-md-6 text-center">
-     <img class="pokeImg" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="">
-    </div>
-  </div>
+</div>
 <%- include("partials/footer") -%>
