@@ -9,6 +9,8 @@
 }
 body{
     font-family: 'VT323', sans-serif ;
+    background-color: var(--bg);
+    
 }
 nav.st {
     padding: 10px 10px 10px 20px;
@@ -35,9 +37,6 @@ img.pokeImg{
     height: 50%;
 }
 
-body{
-    background-color: var(--bg);
-}
 .searchbar{
     display: flex;
     margin-bottom: auto;
@@ -89,22 +88,25 @@ body{
 #dd{
     font-family: 'VT323', sans-serif ;
     max-width: 700px ;
-    background-color: var(--details-light);
-    background-color: var();
+    background-color: var(--main);
+    color: var(--bg);
     
 }
 #ds{
     max-width: 700px ;
-    background-color: var(--details-light);
+    background-color: var(--main);
+    color: var(--bg);
     
 }
 #dm{
-    background-color: var(--details-light);
+    background-color: var(--main);
+    color: var(--bg);
     max-width: 700px ;
 
 }
 #HW{
-    background-color: var(--details-light);
+    background-color: var(--main);
+    color: var(--bg);
 }
 #bs{
     border-radius: 30px;
