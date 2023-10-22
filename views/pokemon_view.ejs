@@ -31,19 +31,15 @@
             <% }); %>
             </h5>
           </div>
-        </div>  
-      </div>
-      </div>
-      <div id="ds" class="row my-3 p-3 border rounded-3">
-        <div class="container p-0">
-          <h3 class="text-center">Moves</h3>
-          <div class="row">
+        </div>
 
-        <% if(pokemon.moves.length < 10){%>
-          <h5> 
+        <div id="dm" class="row my-3 p-3 border rounded-3">
+          <h3>Moves</h3>
+          <div class="col">
+          <h5>
             <% pokemon.moves.forEach(function(pk) { %>
-              <%= pk.move.name[0].toUpperCase()+pk.move.name.slice(1).replaceAll('-',' ') %> <br>
-          <% }); %> 
+              <%= pk.move.name[0].toUpperCase()+pk.move.name.slice(1).replaceAll('-',' ') %><br>
+          <% }); %>
           </h5>
         </div>
         <% }
@@ -62,7 +58,7 @@
       </div>
     </div>
       <div class="h-100 col-md-6 text-center">
-        <img class="pokeImg h-75" src = <%= pokemon.sprites.other["official-artwork"].front_default %> alt="">
+        <img class="pokeImg h-75" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="">
         <div id="HW" class="row my-3 p-3 border rounded-3">
           <div id="CH" class="col">
             <h3><%= pokemon.height %> m</h3>
