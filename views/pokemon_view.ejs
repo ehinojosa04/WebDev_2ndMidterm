@@ -6,11 +6,11 @@
         <div id="dd" class=" row my-3 p-3 border rounded-3">
           <div class="container">
             <form action="/search" method="post">
-              <div class="col position-relative">
-              <input type="submit" class="btn btn_cycle position-absolute" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
-              <input type="submit" class="btn btn_cycle position-absolute top-0 end-0" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
-              </div>
-            
+              <div class="col d-flex justify-content-between">
+              <button type="submit" class="btn btn_cycle" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>>&lt</button>
+              <h4 class="text-center">#<%= pokemon.id %></h4>
+              <button type="submit" class="btn btn_cycle" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>>&gt</button>
+              </div>      
             </form>
           </div>
           <img class="pokeImg h-75" <% if(!pokemon.sprites.other["official-artwork"].front_default){%> src ="/images/placeholder.png" <%}else{%> src = <%= pokemon.sprites.other["official-artwork"].front_default %> <%}%> alt="image">

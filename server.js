@@ -10,6 +10,10 @@ app.use(express.static("public"));
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
+app.get('/', (req,res)=>{
+    res.redirect('/home')
+})
+
 app.get('/home', (req,res)=>{
     res.render('home', { title: "Home"})
 })
