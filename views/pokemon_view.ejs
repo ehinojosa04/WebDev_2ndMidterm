@@ -6,9 +6,9 @@
         <div id="dd" class=" row my-3 p-3 border rounded-3">
           <div class="container">
             <form action="/search" method="post">
-              <div class="col">
-              <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
-              <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
+              <div class="col position-relative">
+              <input type="submit" class="btn text-light position-absolute" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
+              <input type="submit" class="btn text-light position-absolute top-0 end-0" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
               </div>
             
             </form>
