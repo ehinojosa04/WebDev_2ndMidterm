@@ -7,8 +7,8 @@
           <div class="container">
             <form action="/search" method="post">
               <div class="col position-relative">
-              <input type="submit" class="btn text-light position-absolute" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
-              <input type="submit" class="btn text-light position-absolute top-0 end-0" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
+              <input type="submit" class="btn btn_cycle position-absolute" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
+              <input type="submit" class="btn btn_cycle position-absolute top-0 end-0" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
               </div>
             
             </form>
@@ -83,8 +83,6 @@
               <h5><%= pokemon.moves[index].move.name[0].toUpperCase()+pokemon.moves[index].move.name.slice(1).replaceAll('-',' ') %></h5>
             <%}};%>
           </div>
-        </div>
-      </div>
 
 
 

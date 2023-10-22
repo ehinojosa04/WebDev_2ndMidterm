@@ -130,3 +130,11 @@ img.pokeImg{
 .ctoa:hover{
     background-color: var(--secondary);
 }
+
+.btn_cycle{
+    background-color: var(--details-light);
+    color: var(--bg);
+}
+.btn_cycle:hover{
+    background-color: var(--details-light);
+}
