@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row align-items-md-stretch p-4">
       <div class="col-md-6">
-        <div id="fc" class="my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="dd" class="my-3 p-3 bg-body-tertiary border rounded-3">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
           <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
           <h5>
@@ -13,7 +13,7 @@
           </h5>
         </div>
 
-        <div class="row my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="ds" class="row my-3 p-3 bg-body-tertiary border rounded-3">
           <div class="col p-0">
             <h3 class="text-center">Stats</h3>
             <h5> 
@@ -33,7 +33,7 @@
           </div>
         </div>
 
-        <div class="my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="dm" class="my-3 p-3 bg-body-tertiary border rounded-3">
           <h3>Moves</h3>
           <h5>
             <% pokemon.moves.forEach(function(pk) { %>

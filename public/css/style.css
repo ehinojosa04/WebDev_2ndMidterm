@@ -78,8 +78,16 @@ body{
     text-decoration:none;
     }
 
-#fc{
+#dd{
     font-family: 'VT323', sans-serif ;
     font-weight: 400;
+    width: 700px ;
     
+}
+#ds{
+    width: 700px ;
+    margin-left: 0px;
+}
+#dm{
+    width: 700px ;
 }
