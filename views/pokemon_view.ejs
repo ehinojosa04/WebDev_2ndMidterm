@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row align-items-md-stretch p-4">
       <div class="col-md-6">
-        <div id="dd" class="my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="dd" class=" row my-3 p-3 bg-body-tertiary border rounded-3">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
           <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
           <h5>
@@ -38,10 +38,41 @@
           <div class="col">
           <h5>
             <% pokemon.moves.forEach(function(pk) { %>
+              <% if (i >= pokemon.moves.length) break; %>
+              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
+          <% } %>
+          </h5>
+<<<<<<< HEAD
+        </div>
+        <div class="col">
+          <h5>
+            <% for (var i = 20; i < 40; i++) { %>
+              <% if (i >= pokemon.moves.length) break; %>
+              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
+          <% } %>
+          </h5>
+        </div>
+        <div class="col">
+          <h5>
+            <% for (var i = 40; i < 60; i++) { %>
+              <% if (i >= pokemon.moves.length) break; %>
               <%= pk.move.name[0].toUpperCase()+pk.move.name.slice(1).replaceAll('-',' ') %><br>
           <% }); %>
           </h5>
+        </div>
+        <div class="col">
+          <h5>
+            <% for (var i = 60; i < 80; i++) { %>
+              <% if (i >= pokemon.moves.length) break; %>
+              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
+          <% } %>
+          </h5>
+        </div>
+        
+        
+=======
           </div>
+>>>>>>> 602eae9196b54cdf4c8fe767c442bdee4d63e9c3
         </div>
 
       </div>
