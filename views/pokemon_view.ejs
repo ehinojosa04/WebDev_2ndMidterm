@@ -13,7 +13,7 @@
             
             </form>
           </div>
-          <img class="pokeImg h-75" src = <% if(!pokemon.sprites.other["official-artwork"].front_default){%> "/images/placeholder.png" <%}else{%><%= pokemon.sprites.other["official-artwork"].front_default %> alt="image"<%}%>>
+          <img class="pokeImg h-75" <% if(!pokemon.sprites.other["official-artwork"].front_default){%> src ="/images/placeholder.png" <%}else{%> src = <%= pokemon.sprites.other["official-artwork"].front_default %> <%}%> alt="image">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
           <h5> <% if(species.flavor_text_entries.length>0){i = 0; while(species.flavor_text_entries[i].language.name != "en"){i++;}} %> <%= species.flavor_text_entries[i].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
           <h5>
