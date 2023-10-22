@@ -33,7 +33,7 @@
           </div>
         </div>
 
-        <div id="dm" class=" row my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="dm" class="row my-3 p-3 bg-body-tertiary border rounded-3">
           <h3>Moves</h3>
           <div class="col">
           <h5>
@@ -41,28 +41,7 @@
               <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
           <% } %>
           </h5>
-        </div>
-        <div class="col">
-          <h5>
-            <% for (var i = 20; i < 40; i++) { %>
-              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
-          <% } %>
-          </h5>
-        </div>
-        <div class="col">
-          <h5>
-            <% for (var i = 40; i < 60; i++) { %>
-              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
-          <% } %>
-          </h5>
-        </div>
-        <div class="col">
-          <h5>
-            <% for (var i = 60; i < 80; i++) { %>
-              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
-          <% } %>
-          </h5>
-        </div>
+          </div>
         </div>
 
       </div>
