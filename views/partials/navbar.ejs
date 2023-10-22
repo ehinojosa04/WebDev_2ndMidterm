@@ -13,10 +13,12 @@
     </div>
     <div class="container justify-content-center  h-100">
       <div class="d-flex justify-content-center h-100">
-        <div class="searchbar">
-          <input class="search_input" type="text" name="" placeholder="Search your Pokemon">
-          <a href="#" class="search_icon"><img src="/images/pkm.png"></i></a>
+        <form action="/search/" method="post">
+          <div class="searchbar">
+            <input class="search_input" type="text" name="id" placeholder="Search your Pokemon">
+            <button type="submit"><img src="/images/pkm.png"></i></button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </nav>

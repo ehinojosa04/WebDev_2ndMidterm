@@ -26,6 +26,11 @@ app.get('/pokemon_view/:id', async (req, res) => {
     res.render('pokemon_view', { pokemon: data1 , species: data2});
 });
 
+app.post('/search', (req,res)=>{
+    var id = req.body.id;
+    res.redirect("/pokemon_view/"+id);
+})
+
 
 app.listen(5000,() =>{
     console.log("Listening to port 5000...");
