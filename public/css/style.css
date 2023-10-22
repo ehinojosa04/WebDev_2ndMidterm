@@ -42,7 +42,7 @@ img.pokeImg{
     margin-bottom: auto;
     margin-top: auto;
     height: 60px;
-    background-color: #353b48;
+    background-color: var(--main);
     border-radius: 30px;
     padding: 10px;
     align-items: center;
@@ -52,7 +52,7 @@ img.pokeImg{
     color: white;
     border: 0;
     outline: 0;
-    background-color:#353b48 ;
+    background-color:var(--main);
     width: 0px;
     max-width: 300px;
     caret-color:transparent;
@@ -109,7 +109,7 @@ img.pokeImg{
 }
 #bs{
     border-radius: 30px;
-    background-color: #353b48;
+    background-color: var(--main);
     border-style: hidden;
 }
 #pi{
