@@ -1,22 +1,22 @@
 <%- include('partials/header') %>
-<%- include('partials/navbar') %>
-<%- include('partials/footer') %>
-<style>
- body{
-    background-color: #011627;
-    color: white;
- }
-</style>
-<div class="container-fluid banner">
-		<div class="row">
-			<div class="col-md-8 offset-md-2 info">
-				<h1 class="text-center">POKEDEX</h1>
-				<p class="text-center">
-					Welcome to our Pokedex, where you can get information of more than 1,000 pokemons.
-				</p>
-				<form class="text-center" action="/search/" method="get">
-					<button type="submit" class="btn ctoa" name="name" value=1>START EXPLORING</button>
-				</form>
+	<%- include('partials/navbar') %>
+
+		<style>
+			body {
+				background-color: #011627;
+				color: white;
+			}
+		</style>
+		<div class="container-fluid banner">
+			<div class="row">
+				<div class="col-md-8 offset-md-2 info">
+					<h1 class="text-center">POKEDEX</h1>
+					<p class="text-center">
+						Welcome to our Pokedex, where you can get information of more than 1,000 pokemons.
+					</p>
+					<form class="text-center" action="/search/" method="get">
+						<button type="submit" class="btn ctoa" name="name" value=1>START EXPLORING</button>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
