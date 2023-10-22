@@ -81,6 +81,8 @@ body{
 #dd{
     font-family: 'VT323', sans-serif ;
     max-width: 700px ;
+    background-color: var(--details-light);
+    color: var(--main);
 }
 #ds{
     max-width: 700px ;

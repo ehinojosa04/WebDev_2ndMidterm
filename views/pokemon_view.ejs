@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row align-items-md-stretch p-4">
       <div class="col-md-6">
-        <div id="dd" class=" row my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="dd" class=" row my-3 p-3 border rounded-3">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
           <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
           <h5>
@@ -13,7 +13,7 @@
           </h5>
         </div>
 
-        <div id="ds" class="row my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="ds" class="row my-3 p-3 border rounded-3">
           <div class="col p-0">
             <h3 class="text-center">Stats</h3>
             <h5> 
@@ -33,7 +33,7 @@
           </div>
         </div>
 
-        <div id="dm" class="row my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="dm" class="row my-3 p-3 border rounded-3">
           <h3>Moves</h3>
           <div class="col">
           <h5>
@@ -48,7 +48,7 @@
       </div>
       <div class="h-100 col-md-6 text-center">
         <img class="pokeImg h-75" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="">
-        <div id="HW" class="row my-3 p-3 bg-body-tertiary border rounded-3">
+        <div id="HW" class="row my-3 p-3 border rounded-3">
           <div id="CH" class="col">
             <h3><%= pokemon.height %> m</h3>
             <h5>Height</h5>
