@@ -15,7 +15,7 @@
           </div>
           <img class="pokeImg h-75" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="image">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
-          <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
+          <h5> <% let i = 0; while(species.flavor_text_entries[i].language.name != "en"){i++;} %> <%= species.flavor_text_entries[i].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
           <h5>
             <% pokemon.types.forEach(function(pk) { %>
                 <span class="badge text-bg-danger"><%= pk.type.name[0].toUpperCase()+pk.type.name.slice(1) %></span>
@@ -25,11 +25,11 @@
         <div class="col">
           <div id="HW" class=" row my-3 p-3 border rounded-3">
             <div class="row">
-              <div id="CH" class="col">
+              <div id="CH" class="col text-center">
                 <h3><%= pokemon.height %> m</h3>
                 <h5>Height</h5>
               </div>
-              <div class="col">
+              <div class="col text-center">
                 <h3><%= pokemon.weight %> Kg</h3>
                 <h5>Weight</h5>
               </div>
@@ -72,12 +72,12 @@
         else{%>
           <div class="col text-center">
             <% for (let index = 0; index < Math.floor(pokemon.moves.length/2); index++) {%>
-              <h5><%= pokemon.moves[index].move.name%></h5>
+              <h5><%= pokemon.moves[index].move.name[0].toUpperCase()+pokemon.moves[index].move.name.slice(1).replaceAll('-',' ') %></h5>
             <%};%>
           </div>
           <div class="col text-center">
             <% for (let index = Math.ceil(pokemon.moves.length/2); index < pokemon.moves.length; index++) {%>
-              <h5><%= pokemon.moves[index].move.name%></h5>
+              <h5><%= pokemon.moves[index].move.name[0].toUpperCase()+pokemon.moves[index].move.name.slice(1).replaceAll('-',' ') %></h5>
             <%}};%>
           </div>
         </div>
