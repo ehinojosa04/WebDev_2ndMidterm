@@ -38,43 +38,13 @@
           <div class="col">
           <h5>
             <% pokemon.moves.forEach(function(pk) { %>
-              <% if (i >= pokemon.moves.length) break; %>
-              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
-          <% } %>
-          </h5>
-<<<<<<< HEAD
-        </div>
-        <div class="col">
-          <h5>
-            <% for (var i = 20; i < 40; i++) { %>
-              <% if (i >= pokemon.moves.length) break; %>
-              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
-          <% } %>
-          </h5>
-        </div>
-        <div class="col">
-          <h5>
-            <% for (var i = 40; i < 60; i++) { %>
-              <% if (i >= pokemon.moves.length) break; %>
               <%= pk.move.name[0].toUpperCase()+pk.move.name.slice(1).replaceAll('-',' ') %><br>
           <% }); %>
           </h5>
         </div>
-        <div class="col">
-          <h5>
-            <% for (var i = 60; i < 80; i++) { %>
-              <% if (i >= pokemon.moves.length) break; %>
-              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
-          <% } %>
-          </h5>
-        </div>
         
         
-=======
-          </div>
->>>>>>> 602eae9196b54cdf4c8fe767c442bdee4d63e9c3
         </div>
-
       </div>
       <div class="h-100 col-md-6 text-center">
         <img class="pokeImg h-75" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="">
