@@ -105,6 +105,7 @@ img.pokeImg{
 
 }
 #HW{
+    max-width: 700px ;
     background-color: var(--main);
     color: var(--bg);
 }
