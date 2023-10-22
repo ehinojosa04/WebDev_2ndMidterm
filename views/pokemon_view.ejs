@@ -4,6 +4,7 @@
   <div class="row align-items-md-stretch p-4">
       <div class="col-md-6">
         <div id="dd" class=" row my-3 p-3 border rounded-3">
+          <img class="pokeImg h-75" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="image">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
           <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
           <h5>
@@ -31,38 +32,23 @@
             <% }); %>
             </h5>
           </div>
-        </div>  
-      </div>
-      </div>
-      <div id="ds" class="row my-3 p-3 border rounded-3">
-        <div class="container p-0">
-          <h3 class="text-center">Moves</h3>
-          <div class="row">
+        </div>
 
-        <% if(pokemon.moves.length < 10){%>
-          <h5> 
+        <div id="dm" class="row my-3 p-3 border rounded-3">
+          <h3>Moves</h3>
+          <div class="col">
+          <h5>
             <% pokemon.moves.forEach(function(pk) { %>
-              <%= pk.move.name[0].toUpperCase()+pk.move.name.slice(1).replaceAll('-',' ') %> <br>
-          <% }); %> 
+              <%= pk.move.name[0].toUpperCase()+pk.move.name.slice(1).replaceAll('-',' ') %><br>
+          <% }); %>
           </h5>
         </div>
-        <% }
-        else{%>
-          <div class="col text-center">
-            <% for (let index = 0; index < Math.floor(pokemon.moves.length/2); index++) {%>
-              <h5><%= pokemon.moves[index].move.name%></h5>
-            <%};%>
-          </div>
-          <div class="col text-center">
-            <% for (let index = Math.ceil(pokemon.moves.length/2); index < pokemon.moves.length; index++) {%>
-              <h5><%= pokemon.moves[index].move.name%></h5>
-            <%}};%>
-          </div>
+        
+        
         </div>
       </div>
-    </div>
       <div class="h-100 col-md-6 text-center">
-        <img class="pokeImg h-75" src = <%= pokemon.sprites.other["official-artwork"].front_default %> alt="">
+        
         <div id="HW" class="row my-3 p-3 border rounded-3">
           <div id="CH" class="col">
             <h3><%= pokemon.height %> m</h3>
