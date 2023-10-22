@@ -24,6 +24,7 @@ app.get('/pokemon_view/:id', async (req, res) => {
   const url2 = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
   try {
       const response1 = await fetch(url1);
+
       if (!response1.ok) {
           throw new Error('Pokemon not found');
       }
