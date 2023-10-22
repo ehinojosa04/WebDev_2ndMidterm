@@ -44,7 +44,7 @@ app.post('/search', async (req, res) => {
       res.render('pokemon_view', { pokemon: data1, species: data2 });
     } catch (error) {
       // Handle errors, e.g., Pokémon not found
-      res.render('pokemon_view', window.alert("Pokemon Not Found"));
+      res.send('Pokémon not found');
     }
   });
 
