@@ -37,9 +37,9 @@
           <h3>Moves</h3>
           <div class="col">
           <h5>
-            <% for (var i = 0; i < 20; i++) { %>
-              <%= pokemon.moves[i].move.name[0].toUpperCase() + pokemon.moves[i].move.name.slice(1).replaceAll('-', ' ') %><br>
-          <% } %>
+            <% pokemon.moves.forEach(function(pk) { %>
+              <%= pk.move.name[0].toUpperCase()+pk.move.name.slice(1).replaceAll('-',' ') %><br>
+          <% }); %>
           </h5>
           </div>
         </div>
