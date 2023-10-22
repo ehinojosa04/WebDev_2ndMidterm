@@ -7,7 +7,7 @@
           <div class="container">
             <form action="/search" method="post">
               <div class="col">
-              <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1){%> 1009 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
+              <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
               <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
               </div>
             
@@ -15,7 +15,7 @@
           </div>
           <img class="pokeImg h-75" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="image">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
-          <h5> <% let i = 0; while(species.flavor_text_entries[i].language.name != "en"){i++;} %> <%= species.flavor_text_entries[i].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
+          <h5> <% if(species.flavor_text_entries.length>0){i = 0; while(species.flavor_text_entries[i].language.name != "en"){i++;}} %> <%= species.flavor_text_entries[i].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
           <h5>
             <% pokemon.types.forEach(function(pk) { %>
                 <span class="badge text-bg-danger"><%= pk.type.name[0].toUpperCase()+pk.type.name.slice(1) %></span>
