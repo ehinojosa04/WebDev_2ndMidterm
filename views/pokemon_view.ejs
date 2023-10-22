@@ -2,18 +2,17 @@
 <%- include("partials/navbar") -%>
 <div class="container-fluid">
   <div class="row align-items-md-stretch p-4">
-      <div class="col-md-6">
+      <div class="col-md-6 mx-auto">
         <div id="dd" class=" row my-3 p-3 border rounded-3">
           <div class="container">
             <form action="/search" method="post">
               <div class="col">
               <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
+              <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
               </div>
-              <div class="col">
-                <input type="submit" class="btn bg-secondary" name="name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
-              </div>
-            </div>
-          </form>
+            
+            </form>
+          </div>
           <img class="pokeImg h-75" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="image">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
           <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
