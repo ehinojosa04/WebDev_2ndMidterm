@@ -92,21 +92,11 @@ img.pokeImg{
     color: var(--bg);
     
 }
-#ds{
-    max-width: 700px ;
-    background-color: var(--main);
-    color: var(--bg);
-    
-}
 #dm{
     background-color: var(--main);
     color: var(--bg);
 }
-#HW{
-    max-width: 700px ;
-    background-color: var(--main);
-    color: var(--bg);
-}
+
 #bs{
     border-radius: 30px;
     background-color: var(--main);
