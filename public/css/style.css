@@ -132,3 +132,7 @@ img.pokeImg{
 .banner .info a:hover{
 	background: var(--secondary);
 }
+
+.ctoa{
+    background-color: var(--details);
+}
