@@ -8,14 +8,20 @@
     --bg: #fdfffc;
 }
 body{
-    font-family: 'Urbanist', sans-serif;
+    font-family: 'VT323', sans-serif ;
 }
 nav.st {
     padding: 10px 10px 10px 20px;
 }
 nav{
-    background-color: var(--secondary);
+    background-color: #FFF8E7;
     position: sticky;
+    border-style: solid;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    border-color: var(--details);
+    border-width: 5px;
 }
 
 div.container_principal{
@@ -78,17 +84,36 @@ body{
     text-decoration:none;
     }
 
+
 #dd{
     font-family: 'VT323', sans-serif ;
     max-width: 700px ;
     background-color: var(--details-light);
-    color: var(--main);
+    background-color: var();
+    
 }
 #ds{
     max-width: 700px ;
+    background-color: var(--details-light);
     
 }
 #dm{
+    background-color: var(--details-light);
     max-width: 700px ;
 
+}
+#HW{
+    background-color: var(--details-light);
+}
+#bs{
+    border-radius: 30px;
+    background-color: #353b48;
+    border-style: hidden;
+}
+#pi{
+    max-width: 700px;
+    max-height: 700px;
+}
+.hamburger{
+    display: hidden;
 }

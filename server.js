@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require ("body-parser");
+
 var https = require('https');
 const { render } = require('ejs');
 
@@ -26,10 +27,26 @@ app.get('/pokemon_view/:id', async (req, res) => {
     res.render('pokemon_view', { pokemon: data1 , species: data2});
 });
 
-app.post('/search', (req,res)=>{
-    var id = req.body.id;
-    res.redirect("/pokemon_view/"+id);
-})
+app.post('/search', async (req, res) => {
+    const name = req.body.name; // Assuming the input field is named 'name'
+  
+    try {
+      // Make an API request to search for the Pokémon by name
+      const url1 = `https://pokeapi.co/api/v2/pokemon/${name}`;
+      const url2 = `https://pokeapi.co/api/v2/pokemon-species/${name}`;
+      let data1;
+      const response1 = await fetch(url1);
+      data1 = await response1.json();
+      let data2;
+      const response2 = await fetch(url2);
+      data2 = await response2.json();
+  
+      res.render('pokemon_view', { pokemon: data1, species: data2 });
+    } catch (error) {
+      // Handle errors, e.g., Pokémon not found
+      res.render('pokemon_view', window.alert("Pokemon Not Found"));
+    }
+  });
 
 
 app.listen(5000,() =>{
