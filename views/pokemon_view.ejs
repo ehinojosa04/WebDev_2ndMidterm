@@ -4,6 +4,16 @@
   <div class="row align-items-md-stretch p-4">
       <div class="col-md-6">
         <div id="dd" class=" row my-3 p-3 border rounded-3">
+          <div class="container">
+            <form action="/search" method="post">
+              <div class="col">
+              <input type="submit" class="btn bg-secondary" name = "name" value = <%= pokemon.id-1 %>></button>
+              </div>
+              <div class="col">
+                <input type="submit" class="btn bg-secondary" name="name" value = <%= pokemon.id+1 %>></button>
+              </div>
+            </div>
+          </form>
           <img class="pokeImg h-75" src=<%= pokemon.sprites.other["official-artwork"].front_default %> alt="image">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
           <h5> <%= species.flavor_text_entries[0].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
@@ -13,52 +23,69 @@
             <% }); %> 
           </h5>
         </div>
-
-        <div id="ds" class="row my-3 p-3 border rounded-3">
-          <div class="col p-0">
-            <h3 class="text-center">Stats</h3>
-            <h5> 
-              <% pokemon.stats.forEach(function(pk) { %>
-                <%= pk.stat.name[0].toUpperCase()+pk.stat.name.slice(1).replaceAll('-',' ') %>: <%= pk.base_stat %> <br>
-            <% }); %> 
-            Base XP: <%= pokemon.base_experience %>
-            </h5>
+        <div class="col">
+          <div id="HW" class=" my-3 p-3 border rounded-3">
+            <div class="row">
+              <div id="CH" class="col">
+                <h3><%= pokemon.height %> m</h3>
+                <h5>Height</h5>
+              </div>
+              <div class="col">
+                <h3><%= pokemon.weight %> Kg</h3>
+                <h5>Weight</h5>
+              </div>
           </div>
-          <div class="col p-0 text-center">
-            <h3>Abilities</h3>
-            <h5>
-              <% pokemon.abilities.forEach(function(pk) { %>
-                <%= pk.ability.name[0].toUpperCase()+pk.ability.name.slice(1).replaceAll('-',' ') %><br>
-            <% }); %>
-            </h5>
+        </div>
+  
+          <div id="ds" class="row my-3 p-3 border rounded-3">
+            <div class="col p-0">
+              <h3 class="text-center">Stats</h3>
+              <h5> 
+                <% pokemon.stats.forEach(function(pk) { %>
+                  <%= pk.stat.name[0].toUpperCase()+pk.stat.name.slice(1).replaceAll('-',' ') %>: <%= pk.base_stat %> <br>
+              <% }); %> 
+              Base XP: <%= pokemon.base_experience %>
+              </h5>
+            </div>
+            <div class="col p-0 text-center">
+              <h3>Abilities</h3>
+              <h5>
+                <% pokemon.abilities.forEach(function(pk) { %>
+                  <%= pk.ability.name[0].toUpperCase()+pk.ability.name.slice(1).replaceAll('-',' ') %><br>
+              <% }); %>
+              </h5>
+            </div>
           </div>
         </div>
 
-        <div id="dm" class="row my-3 p-3 border rounded-3">
+        <div id="dm" class="container my-3 p-3 border rounded-3 text-center">
           <h3>Moves</h3>
-          <div class="col">
-          <h5>
+          <div class="row">
+            <% if(pokemon.moves.length < 10){%>
+            <div class="col">
+             <h5> 
             <% pokemon.moves.forEach(function(pk) { %>
               <%= pk.move.name[0].toUpperCase()+pk.move.name.slice(1).replaceAll('-',' ') %><br>
-          <% }); %>
-          </h5>
-        </div>
-        
-        
-        </div>
-      </div>
-      <div class="h-100 col-md-6 text-center">
-        
-        <div id="HW" class="row my-3 p-3 border rounded-3">
-          <div id="CH" class="col">
-            <h3><%= pokemon.height %> m</h3>
-            <h5>Height</h5>
+              <% }); %> 
+            </h5>
           </div>
-          <div class="col">
-            <h3><%= pokemon.weight %> Kg</h3>
-            <h5>Weight</h5>
+        <% }
+        else{%>
+          <div class="col text-center">
+            <% for (let index = 0; index < Math.floor(pokemon.moves.length/2); index++) {%>
+              <h5><%= pokemon.moves[index].move.name%></h5>
+            <%};%>
           </div>
+          <div class="col text-center">
+            <% for (let index = Math.ceil(pokemon.moves.length/2); index < pokemon.moves.length; index++) {%>
+              <h5><%= pokemon.moves[index].move.name%></h5>
+            <%}};%>
+          </div>
+        </div>
       </div>
     </div>
+          </div>
+
+  </div>
 </div>
 <%- include("partials/footer") -%>
