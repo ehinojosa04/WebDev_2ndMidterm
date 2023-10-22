@@ -19,29 +19,33 @@ app.get('/home', (req,res)=>{
 })
 
 app.get('/pokemon_view/:id', async (req, res) => {
-  const id = req.params.id;
-  const url1 = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const url2 = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
-  try {
-      const response1 = await fetch(url1);
+    const id = req.params.id;
+    const url1 = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const url2 = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
+    try {
+        const response1 = await fetch(url1);
+  
+        if (!response1.ok) {
+            throw new Error('Pokemon not found');
+        }
+        const data1 = await response1.json();
+  
+        let data2;
+        const response2 = await fetch(url2);
+        if (!response2.ok) {
+            // Render 'pokemon_view' with just 'data1' if 'response2' is not ok
+            res.render('pokemon_view', { pokemon: data1 });
+        } else {
+            data2 = await response2.json();
+            res.render('pokemon_view', { pokemon: data1 , species: data2 });
+        }
+    } catch (error) {
+        res.status(404).render('error',{title: 'error', em: error.message});
+        res.status(500).render('error',{title: 'error', em: error.message})
+    }
+  });
+  
 
-      if (!response1.ok) {
-          throw new Error('Pokemon not found');
-      }
-      const data1 = await response1.json();
-
-      const response2 = await fetch(url2);
-      if (!response2.ok) {
-          throw new Error('Pokemon species not found');
-      }
-      const data2 = await response2.json();
-
-      res.render('pokemon_view', { pokemon: data1 , species: data2 });
-  } catch (error) {
-      res.status(404).render('error',{title: 'error', em: error.message});
-      res.status(500).render('error',{title: 'error', em: error.message})
-  }
-});
 
 
 app.get('/search', async (req, res) => {

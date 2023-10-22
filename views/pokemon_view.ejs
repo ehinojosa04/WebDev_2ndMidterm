@@ -1,4 +1,4 @@
-<%- include("partials/header", {title: pokemon.name}) -%>
+<%- include("partials/header", {title: pokemon.name[0].toUpperCase()+pokemon.name.slice(1)}) -%>
 <%- include("partials/navbar") -%>
 <div class="container-fluid">
   <div class="row align-items-md-stretch p-4">
@@ -7,15 +7,37 @@
           <div class="container">
             <form action="/search" method="get">
               <div class="col d-flex justify-content-between">
-              <button type="submit" class="btn btn_cycle" name = "name" value = <% if(pokemon.id==1){%> 1017 <%}else{%> <%= pokemon.id-1 %> <%}%>>&lt</button>
+              <button type="submit" class="btn btn_cycle" name = "name" value = <% switch (pokemon.id) {
+                case 1:%>
+                  10075
+                 <% break;
+                  case 10001:%>
+                  1017
+                 <% break;                  
+              
+                default:%>
+                  <%= pokemon.id -1%>
+                <%  break;
+              }%> >&lt</button>
               <h4 class="text-center">#<%= pokemon.id %></h4>
-              <button type="submit" class="btn btn_cycle" name = "name" value = <% if(pokemon.id==1017){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>>&gt</button>
+              <button type="submit" class="btn btn_cycle" name = "name" value = <% switch (pokemon.id) {
+                case 10075:%>
+                  1
+                 <% break;
+                  case 1017:%>
+                  10001
+                 <% break;                  
+              
+                default:%>
+                  <%= pokemon.id +1%>
+                <%  break;
+              }%> >&gt</button>
               </div>      
             </form>
           </div>
           <img class="pokeImg h-75" <% if(!pokemon.sprites.other["official-artwork"].front_default){%> src ="/images/placeholder.png" <%}else{%> src = <%= pokemon.sprites.other["official-artwork"].front_default %> <%}%> alt="image">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
-          <h5> <% if(species.flavor_text_entries.length==0){%>No description found<%}else{i = 0; while(i < species.flavor_text_entries.length && species.flavor_text_entries[i].language.name != "en"){i++;} %> <%= species.flavor_text_entries[i].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon')%><% } %> </h5>
+                  <h5> <% if(typeof species == 'undefined'){species=null}; if(species!=null){if(species.flavor_text_entries.length==0){%>No description found<%}else{i = 0; while(i < species.flavor_text_entries.length && species.flavor_text_entries[i].language.name != "en"){i++;} %> <%= species.flavor_text_entries[i].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon')%><% }} %> </h5>
           <h5>
             <% pokemon.types.forEach(function(pk) { %>
                 <span class="badge text-bg-danger"><%= pk.type.name[0].toUpperCase()+pk.type.name.slice(1) %></span>
