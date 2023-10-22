@@ -5,17 +5,17 @@
       <div class="col-md-6 mx-auto">
         <div id="dd" class=" row my-3 p-3 border rounded-3">
           <div class="container">
-            <form action="/search" method="post">
+            <form action="/search" method="get">
               <div class="col d-flex justify-content-between">
-              <button type="submit" class="btn btn_cycle" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>>&lt</button>
+              <button type="submit" class="btn btn_cycle" name = "name" value = <% if(pokemon.id==1){%> 1292 <%}else{%> <%= pokemon.id-1 %> <%}%>>&lt</button>
               <h4 class="text-center">#<%= pokemon.id %></h4>
-              <button type="submit" class="btn btn_cycle" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>>&gt</button>
+              <button type="submit" class="btn btn_cycle" name = "name" value = <% if(pokemon.id==1292){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>>&gt</button>
               </div>      
             </form>
           </div>
           <img class="pokeImg h-75" <% if(!pokemon.sprites.other["official-artwork"].front_default){%> src ="/images/placeholder.png" <%}else{%> src = <%= pokemon.sprites.other["official-artwork"].front_default %> <%}%> alt="image">
           <h2><%= pokemon.name[0].toUpperCase()+pokemon.name.slice(1) %></h2>
-          <h5> <% if(species.flavor_text_entries.length>0){i = 0; while(species.flavor_text_entries[i].language.name != "en"){i++;}} %> <%= species.flavor_text_entries[i].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon') %> </h5>
+          <h5> <% if(species.flavor_text_entries.length==0){%>No description found<%}else{i = 0; while(i < species.flavor_text_entries.length && species.flavor_text_entries[i].language.name != "en"){i++;} %> <%= species.flavor_text_entries[i].flavor_text.replaceAll('',' ').replaceAll('POKéMON','pokemon')%><% } %> </h5>
           <h5>
             <% pokemon.types.forEach(function(pk) { %>
                 <span class="badge text-bg-danger"><%= pk.type.name[0].toUpperCase()+pk.type.name.slice(1) %></span>
@@ -24,19 +24,6 @@
         </div>
       </div>
         <div class="col">
-          <div id="dd" class=" row my-3 p-3 border rounded-3 d-flex aligns-items-center">
-            <div class="row">
-              <div id="CH" class="col text-center">
-                <h3><%= pokemon.height/10 %> m</h3>
-                <h5>Height</h5>
-              </div>
-              <div class="col text-center">
-                <h3><%= pokemon.weight/10 %> Kg</h3>
-                <h5>Weight</h5>
-              </div>
-          </div>
-        </div>
-  
           <div id="dd" class="row my-3 p-3 border rounded-3">
             <div class="col p-0">
               <h3 class="text-center">Stats</h3>
@@ -56,6 +43,18 @@
               </h5>
             </div>
           </div>
+          <div id="dd" class=" row my-3 p-3 border rounded-3 d-flex aligns-items-center">
+            <div class="row">
+              <div id="CH" class="col text-center">
+                <h3><%= pokemon.height/10 %> m</h3>
+                <h5>Height</h5>
+              </div>
+              <div class="col text-center">
+                <h3><%= pokemon.weight/10 %> Kg</h3>
+                <h5>Weight</h5>
+              </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>

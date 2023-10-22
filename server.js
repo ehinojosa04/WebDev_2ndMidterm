@@ -43,8 +43,8 @@ app.get('/pokemon_view/:id', async (req, res) => {
 });
 
 
-app.post('/search', async (req, res) => {
-    const name = req.body.name;
+app.get('/search', async (req, res) => {
+    const name = req.query.name;
     res.redirect("/pokemon_view/"+name);
   });
 

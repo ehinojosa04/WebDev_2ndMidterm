@@ -1,16 +1,18 @@
 <nav id="navbar" class="navbar nav-fixed-top nav-justified navbar-expand-lg navbar-expand-md navbar-expand-sm">
     <div class="container-fluid d-none d-md-block d-lg-block d-s" style="width: 100px; position: absolute;">
-      <a class="logo navbar-brand mb-0 h1">
-        <img class="logo" src="/images/pkm.png">
-        Pokedex
-      </a>
+      <form action="/" method="get">
+        <button class="btn" type="submit">
+          <img class="logo" src="/images/pkm.png">
+          Pokedex
+        </button>
+      </form>
       
       </div>
 
     </div>
     <div class="container-fluid container justify-content-center h-100">
       <div class="d-flex justify-content-center h-100">
-        <form action="/search/" method="post">
+        <form action="/search/" method="get">
           <div class="searchbar">
             <input class="search_input" type="text" name="name" placeholder="Search your Pokemon"  onkeyup="this.value = this.value.toLowerCase();">
             <button id="bs" type="submit"><img src="/images/pkm.png"></i></button>
