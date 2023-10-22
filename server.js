@@ -33,7 +33,8 @@ app.get('/pokemon_view/:id', async (req, res) => {
 
       res.render('pokemon_view', { pokemon: data1 , species: data2 });
   } catch (error) {
-      res.status(404).send(error.message);
+      res.status(404).render('error',{title: 'error', em: error.message});
+      res.status(500).render('error',{title: 'error', em: error.message})
   }
 });
 
