@@ -122,6 +122,10 @@ img.pokeImg{
 }
 .ctoa{
     background-color: var(--details);
+	color: #fff;
+	padding:10px 20px; 
+	font-size: 2em;
+	font-weight: 600;
 }
 .ctoa:hover{
     background-color: var(--secondary);
