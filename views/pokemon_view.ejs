@@ -7,7 +7,7 @@
           <div class="container">
             <form action="/search" method="post">
               <div class="col">
-              <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1){%> 1008 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
+              <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1){%> 1009 <%}else{%> <%= pokemon.id-1 %> <%}%>></button>
               <input type="submit" class="btn bg-secondary" name = "name" value = <% if(pokemon.id==1008){%> 1 <%}else{%> <%= pokemon.id+1 %> <%}%>></button>
               </div>
             
@@ -57,8 +57,10 @@
             </div>
           </div>
         </div>
-
-        <div id="dm" class=" row my-3 p-3 border rounded-3 text-center">
+      </div>
+    </div>
+  </div>
+        <div id="dm" class="p-3 w-100 container-fluid border text-center">
           <h3>Moves</h3>
           <div class="row">
             <% if(pokemon.moves.length < 10){%>
@@ -84,8 +86,7 @@
         </div>
       </div>
 
-          </div>
 
-  </div>
-</div>
+
+
 <%- include("partials/footer") -%>
